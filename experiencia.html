@@ -20,7 +20,6 @@
     .nav-back{display:inline-flex;align-items:center;gap:.5rem;font-size:.78rem;font-weight:500;letter-spacing:.12em;text-transform:uppercase;color:var(--brown);text-decoration:none;transition:color .2s;}
     .nav-back:hover{color:var(--rose);}
 
-    /* HERO */
     .page-hero{min-height:50vh;background:var(--brown);display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:9rem 2rem 5rem;position:relative;overflow:hidden;}
     .page-hero::before{content:'';position:absolute;width:500px;height:500px;border-radius:50%;background:rgba(226,125,151,.07);top:-140px;right:-80px;}
     .page-hero::after{content:'';position:absolute;width:280px;height:280px;border-radius:50%;background:rgba(216,179,106,.06);bottom:-60px;left:-40px;}
@@ -32,14 +31,12 @@
     .wrap{max-width:1100px;margin:0 auto;padding:0 2.5rem;}
     .wrap-narrow{max-width:900px;margin:0 auto;padding:0 2.5rem;}
 
-    /* INTRO */
     .intro-section{padding:6rem 0 2rem;}
     .intro-grid{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center;}
     .intro-text p{font-size:1rem;line-height:1.9;opacity:.82;margin-bottom:1.2rem;}
     .intro-text p:last-child{margin-bottom:0;}
     .intro-img{background:var(--sand);border-radius:12px;aspect-ratio:4/3;display:flex;align-items:center;justify-content:center;font-family:'Carattere',cursive;font-size:4rem;color:var(--rose);opacity:.25;}
 
-    /* TARJETAS */
     .cards-section{padding:4rem 0;}
     .cards-label{font-size:.72rem;letter-spacing:.22em;text-transform:uppercase;color:var(--rose);margin-bottom:.5rem;}
     .cards-title{font-family:'Carattere',cursive;font-size:clamp(2rem,4vw,3rem);color:var(--brown);margin-bottom:1rem;}
@@ -68,20 +65,16 @@
     .btn-ver{display:inline-flex;align-items:center;gap:.5rem;padding:.65rem 1.5rem;background:var(--rose);color:var(--cream);border:none;border-radius:50px;font-family:'Outfit',sans-serif;font-size:.75rem;font-weight:500;letter-spacing:.08em;text-transform:uppercase;cursor:pointer;text-decoration:none;transition:background .3s,transform .2s;margin-top:1.2rem;align-self:flex-start;}
     .btn-ver:hover{background:#c96882;transform:translateY(-2px);}
 
-    /* GALERÍA */
-    .gallery-section{padding:1rem 0 5rem;}
     .gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;margin-top:1.5rem;}
     .gallery-item{aspect-ratio:1;background:var(--sand);border-radius:10px;display:flex;align-items:center;justify-content:center;overflow:hidden;transition:transform .35s;}
     .gallery-item:hover{transform:translateY(-4px);}
     .gallery-item img{width:100%;height:100%;object-fit:cover;}
     .gallery-placeholder{font-family:'Carattere',cursive;font-size:2rem;color:var(--rose);opacity:.35;}
 
-    /* CIERRE */
     .cierre-section{background:var(--sand);padding:5rem 0;}
     .cierre-text{max-width:720px;margin:0 auto;text-align:center;}
     .cierre-text p{font-size:1.05rem;line-height:1.95;opacity:.82;font-style:italic;}
 
-    /* APRENDIZAJES */
     .aprendizajes-section{padding:6rem 0;}
     .ap-title{font-family:'Carattere',cursive;font-size:clamp(2rem,4vw,3rem);color:var(--brown);margin-bottom:.6rem;}
     .ap-sub{font-size:.85rem;letter-spacing:.15em;text-transform:uppercase;color:var(--rose);margin-bottom:3rem;opacity:.8;}
@@ -93,21 +86,19 @@
     .ap-item-title{font-family:'Carattere',cursive;font-size:1.6rem;color:var(--brown);}
     .ap-item p{font-size:.97rem;line-height:1.95;opacity:.82;margin-bottom:1rem;}
     .ap-item p:last-child{margin-bottom:0;}
-    /* Lista de skills */
     .skills-cols{display:grid;grid-template-columns:1fr 1fr 1fr;gap:2rem;margin-top:2rem;}
     .skills-col-title{font-size:.7rem;letter-spacing:.2em;text-transform:uppercase;color:var(--rose);margin-bottom:1rem;}
     .skills-col ul{list-style:none;display:flex;flex-direction:column;gap:.55rem;}
     .skills-col li{font-size:.9rem;opacity:.78;padding-left:1rem;position:relative;}
     .skills-col li::before{content:'—';position:absolute;left:0;color:var(--gold);}
 
-    /* CTA PORTAFOLIO */
     .cta-section{background:var(--brown);padding:5rem 0;text-align:center;}
     .cta-quote{font-family:'Carattere',cursive;font-size:clamp(1.6rem,3.5vw,2.4rem);color:var(--cream);line-height:1;max-width:700px;margin:0 auto 2.5rem;}
     .cta-quote em{color:var(--rose);font-style:normal;}
-    .btn-cta{display:inline-flex;align-items:center;gap:.7rem;padding:1rem 2.5rem;background:var(--rose);color:var(--cream);border-radius:50px;font-family:'Outfit',sans-serif;font-size:.85rem;font-weight:500;letter-spacing:.1em;text-transform:uppercase;text-decoration:none;transition:background .3s,transform .25s,box-shadow .3s;}
-    .btn-cta:hover{background:#c96882;transform:translateY(-3px);box-shadow:0 14px 30px rgba(226,125,151,.3);}
+    /* ── CAMBIO: btn-cta sin glow, transparente con borde ── */
+    .btn-cta{display:inline-flex;align-items:center;gap:.7rem;padding:1rem 2.5rem;background:transparent;color:var(--cream);border:1.5px solid rgba(255,255,255,.35);border-radius:50px;font-family:'Outfit',sans-serif;font-size:.85rem;font-weight:500;letter-spacing:.1em;text-transform:uppercase;text-decoration:none;transition:background .3s,border-color .3s,transform .25s;}
+    .btn-cta:hover{background:var(--rose);border-color:var(--rose);transform:translateY(-3px);}
 
-    /* BACK */
     .back-wrap{text-align:center;margin-top:4rem;padding-top:3rem;border-top:1px solid rgba(74,61,51,.1);}
     .btn-back{display:inline-flex;align-items:center;gap:.6rem;padding:.9rem 2rem;border:1.5px solid var(--rose);border-radius:50px;font-size:.8rem;font-weight:500;letter-spacing:.1em;text-transform:uppercase;color:var(--rose);text-decoration:none;transition:background .3s,color .3s,transform .25s;}
     .btn-back:hover{background:var(--rose);color:var(--cream);transform:translateY(-3px);}
@@ -139,7 +130,6 @@
     <p class="ph-sub">Práctica profesional · 2026</p>
   </div>
 
-  <!-- INTRO -->
   <section class="intro-section">
     <div class="wrap">
       <div class="intro-grid rv">
@@ -147,29 +137,22 @@
           <p>Actualmente realizo mi práctica profesional en el Comité de Cafeteros del Valle del Cauca, entidad adscrita a la Federación Nacional de Cafeteros de Colombia, donde apoyo procesos de comunicación institucional orientados a la difusión de proyectos, programas e iniciativas que impactan al sector cafetero del departamento.</p>
           <p>Mi experiencia dentro de la organización me ha permitido comprender la comunicación como una herramienta estratégica para fortalecer el vínculo entre la institucionalidad cafetera, los territorios y las comunidades productoras.</p>
         </div>
-        <div class="intro-img rv" style="transition-delay:.15s;">
-          <!-- <img src="intro-exp.jpg" alt="Tania en el Comité de Cafeteros"> -->
-          ✦
-        </div>
+        <div class="intro-img rv" style="transition-delay:.15s;">✦</div>
       </div>
     </div>
   </section>
 
-  <!-- TARJETAS DE TIPOS DE TRABAJO -->
   <section class="cards-section">
     <div class="wrap">
       <p class="cards-label rv">Lo que hice</p>
       <h2 class="cards-title rv" style="transition-delay:.06s;">Tipos de trabajo</h2>
       <div class="cards-div rv" style="transition-delay:.1s;"></div>
-
       <div class="cards-grid">
 
-        <!-- TARJETA 1: Comunicación institucional -->
         <div class="exp-card rv" style="transition-delay:.1s;">
           <div class="exp-card-inner">
             <div class="exp-front">
               <div class="exp-front-img">
-                <!-- <img src="img/institucional.jpg" alt="Comunicación Institucional" /> -->
                 <span class="exp-front-img-ph">✦</span>
                 <span class="flip-hint">Clic para ver más</span>
               </div>
@@ -186,12 +169,10 @@
           </div>
         </div>
 
-        <!-- TARJETA 2: Cobertura de eventos -->
         <div class="exp-card rv" style="transition-delay:.2s;">
           <div class="exp-card-inner">
             <div class="exp-front">
               <div class="exp-front-img">
-                <!-- <img src="img/cobertura.jpg" alt="Cobertura de Eventos" /> -->
                 <span class="exp-front-img-ph">✦</span>
                 <span class="flip-hint">Clic para ver más</span>
               </div>
@@ -208,12 +189,10 @@
           </div>
         </div>
 
-        <!-- TARJETA 3: Creación de contenidos -->
         <div class="exp-card rv" style="transition-delay:.3s;">
           <div class="exp-card-inner">
             <div class="exp-front">
               <div class="exp-front-img">
-                <!-- <img src="img/contenidos.jpg" alt="Creación de Contenidos" /> -->
                 <span class="exp-front-img-ph">✦</span>
                 <span class="flip-hint">Clic para ver más</span>
               </div>
@@ -234,7 +213,6 @@
     </div>
   </section>
 
-  <!-- DETALLE TIPO 1 -->
   <section style="padding:5rem 0;background:var(--cream);" id="tipo-1">
     <div class="wrap-narrow">
       <div class="rv">
@@ -242,7 +220,6 @@
         <h2 style="font-family:'Carattere',cursive;font-size:2.3rem;color:var(--brown);margin-bottom:1.2rem;">Comunicación Institucional y Circulación de Información</h2>
         <div style="width:42px;height:2px;background:var(--gold);margin-bottom:1.8rem;"></div>
         <p style="font-size:1rem;line-height:1.95;opacity:.82;margin-bottom:1.2rem;">Apoyo la construcción y difusión de contenidos institucionales dirigidos a fortalecer la comunicación interna y externa del Comité. Dentro de este proceso participo en la elaboración de boletines internos, carteleras informativas y piezas comunicativas orientadas a la socialización de actividades, proyectos, convocatorias y mensajes relevantes para las diferentes áreas y públicos de la organización.</p>
-      <!-- Galería de fotos de eventos -->
         <div class="gallery" style="margin-top:2rem;">
           <div class="gallery-item"><span class="gallery-placeholder">✦</span></div>
           <div class="gallery-item"><span class="gallery-placeholder">✦</span></div>
@@ -252,7 +229,6 @@
     </div>
   </section>
 
-  <!-- DETALLE TIPO 2 -->
   <section style="padding:5rem 0;background:var(--cream);" id="tipo-2">
     <div class="wrap-narrow">
       <div class="rv">
@@ -260,7 +236,6 @@
         <h2 style="font-family:'Carattere',cursive;font-size:2.3rem;color:var(--brown);margin-bottom:1.2rem;">Cobertura Integral de Eventos Institucionales</h2>
         <div style="width:42px;height:2px;background:var(--gold);margin-bottom:1.8rem;"></div>
         <p style="font-size:1rem;line-height:1.95;opacity:.82;margin-bottom:1.2rem;">Participo en el desarrollo comunicativo y logístico de eventos institucionales mediante el cubrimiento periodístico y audiovisual de actividades realizadas por el Comité. Mis funciones incluyen el registro fotográfico, producción de entrevistas, documentación de eventos y generación de contenidos digitales relacionados con estas iniciativas. Asimismo, brindo apoyo en procesos organizacionales y logísticos que contribuyen al adecuado desarrollo de las actividades institucionales.</p>
-        <!-- Galería de fotos de eventos -->
         <div class="gallery" style="margin-top:2rem;">
           <div class="gallery-item"><span class="gallery-placeholder">✦</span></div>
           <div class="gallery-item"><span class="gallery-placeholder">✦</span></div>
@@ -270,7 +245,6 @@
     </div>
   </section>
 
-  <!-- DETALLE TIPO 3 -->
   <section style="padding:5rem 0;background:var(--cream);" id="tipo-3">
     <div class="wrap-narrow">
       <div class="rv">
@@ -279,7 +253,6 @@
         <div style="width:42px;height:2px;background:var(--gold);margin-bottom:1.8rem;"></div>
         <p style="font-size:1rem;line-height:1.95;opacity:.82;margin-bottom:1.2rem;">Apoyo la concepción, producción y posproducción de contenidos digitales para redes sociales y otros canales institucionales del Comité y sus diferentes áreas. A través de estas piezas contribuyo a la construcción de narrativas institucionales orientadas a visibilizar proyectos, fortalecer la identidad cafetera y acercar la institucionalidad a las comunidades del territorio.</p>
         <p style="font-size:1rem;line-height:1.95;opacity:.82;margin-bottom:2rem;">Este proceso también me ha permitido integrarme a dinámicas de trabajo interdisciplinario, fortaleciendo habilidades de comunicación estratégica y trabajo colaborativo en entornos organizacionales.</p>
-        <!-- Galería de contenidos -->
         <div class="gallery">
           <div class="gallery-item"><span class="gallery-placeholder">✦</span></div>
           <div class="gallery-item"><span class="gallery-placeholder">✦</span></div>
@@ -289,7 +262,6 @@
     </div>
   </section>
 
-  <!-- CIERRE -->
   <section class="cierre-section">
     <div class="wrap-narrow">
       <div class="cierre-text rv">
@@ -298,7 +270,6 @@
     </div>
   </section>
 
-  <!-- APRENDIZAJES -->
   <section class="aprendizajes-section">
     <div class="wrap-narrow">
       <div class="rv">
@@ -308,43 +279,30 @@
       </div>
 
       <div class="ap-item rv" style="transition-delay:.08s;">
-        <div class="ap-item-header">
-          <span class="ap-star">✦</span>
-          <h3 class="ap-item-title">Comprensión estratégica de la comunicación institucional</h3>
-        </div>
+        <div class="ap-item-header"><span class="ap-star">✦</span><h3 class="ap-item-title">Comprensión estratégica de la comunicación institucional</h3></div>
         <p>Uno de los principales aprendizajes ha sido comprender el papel de la comunicación institucional como un eje fundamental para fortalecer la relación entre las organizaciones y sus públicos. Esta experiencia me permitió entender cómo los procesos comunicativos contribuyen a generar cercanía, identidad y confianza entre la institucionalidad cafetera y las comunidades productoras del territorio.</p>
         <p>Fortalecí mi capacidad para construir contenidos alineados con objetivos organizacionales, reconociendo la importancia de comunicar de manera clara, pertinente y estratégica en contextos institucionales.</p>
       </div>
 
       <div class="ap-item rv" style="transition-delay:.12s;">
-        <div class="ap-item-header">
-          <span class="ap-star">✦</span>
-          <h3 class="ap-item-title">Desarrollo de habilidades en creación de contenidos</h3>
-        </div>
+        <div class="ap-item-header"><span class="ap-star">✦</span><h3 class="ap-item-title">Desarrollo de habilidades en creación de contenidos</h3></div>
         <p>La participación constante en la producción de contenidos digitales, piezas informativas y cubrimientos institucionales fortaleció mis habilidades en: redacción y creación de contenidos, construcción de narrativas institucionales, producción audiovisual, fotografía y documentación de eventos, edición y adaptación de contenidos para plataformas digitales, storytelling organizacional y manejo de herramientas de IA.</p>
         <p>Este proceso me permitió desarrollar una visión más integral sobre la manera en que los contenidos pueden conectar emocionalmente con las audiencias y transmitir el valor social de las iniciativas institucionales.</p>
       </div>
 
       <div class="ap-item rv" style="transition-delay:.16s;">
-        <div class="ap-item-header">
-          <span class="ap-star">✦</span>
-          <h3 class="ap-item-title">Fortalecimiento de capacidades organizacionales</h3>
-        </div>
+        <div class="ap-item-header"><span class="ap-star">✦</span><h3 class="ap-item-title">Fortalecimiento de capacidades organizacionales</h3></div>
         <p>El trabajo dentro del área de comunicaciones me permitió integrarme a dinámicas interdisciplinarias con diferentes equipos y áreas del Comité, fortaleciendo habilidades como: trabajo colaborativo, adaptabilidad, organización y gestión del tiempo, comunicación asertiva, resolución de situaciones en entornos dinámicos y capacidad de respuesta frente a múltiples tareas.</p>
       </div>
 
       <div class="ap-item rv" style="transition-delay:.2s;">
-        <div class="ap-item-header">
-          <span class="ap-star">✦</span>
-          <h3 class="ap-item-title">Sensibilidad social y comprensión del territorio</h3>
-        </div>
+        <div class="ap-item-header"><span class="ap-star">✦</span><h3 class="ap-item-title">Sensibilidad social y comprensión del territorio</h3></div>
         <p>La experiencia dentro del Comité fortaleció mi sensibilidad frente a las realidades sociales y humanas presentes en los territorios cafeteros. A través del contacto con proyectos, comunidades y procesos institucionales, comprendí la importancia de la comunicación como una herramienta para visibilizar historias, fortalecer identidades y generar conexiones entre las instituciones y las personas.</p>
         <p>Este aprendizaje reafirmó mi interés por desarrollar procesos comunicativos con enfoque humano y propósito social, capaces de contribuir al reconocimiento de las comunidades y al fortalecimiento del tejido social.</p>
       </div>
 
-      <!-- TABLA DE HABILIDADES -->
       <div class="rv" style="transition-delay:.24s;margin-top:3rem;">
-        <p style="font-size:.7rem;font-weight: 600 ;letter-spacing:.22em;text-transform:uppercase;color:var(--rose);margin-bottom:1.5rem;">Resumen de habilidades fortalecidas</p>
+        <p style="font-size:.7rem;font-weight:600;letter-spacing:.22em;text-transform:uppercase;color:var(--rose);margin-bottom:1.5rem;">Resumen de habilidades fortalecidas</p>
         <div class="skills-cols">
           <div class="skills-col">
             <p class="skills-col-title">Competencias comunicativas</p>
@@ -381,13 +339,10 @@
         </div>
       </div>
 
-      <div class="back-wrap rv">
-
-      </div>
+      <div class="back-wrap rv"></div>
     </div>
   </section>
 
-  <!-- CTA -->
   <section class="cta-section">
     <div class="wrap">
       <p class="cta-quote rv">La comunicación no solo informa, sino que también <em>construye vínculos, fortalece identidades y acerca a las instituciones con las comunidades.</em></p>

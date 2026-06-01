@@ -54,7 +54,7 @@
     section { padding: 8rem 0; }
     .wrap { max-width: 1060px; margin: 0 auto; padding: 0 2.5rem; }
     .sec-title { font-family: 'Carattere', cursive; font-size: clamp(2.5rem,4.2vw,3.2rem); font-weight: 600; color: var(--brown); line-height: 0.7; margin-bottom: .4rem; }
-    .sec-subtitle { font-family: 'Outfit', sans-serif;  font-size: clamp(0.8rem,1.6vw,1.1rem); color: var(--rose); line-height: 1.8; margin-bottom: .8rem; }
+    .sec-subtitle { font-family: 'Outfit', sans-serif; font-size: clamp(0.8rem,1.6vw,1.1rem); color: var(--rose); line-height: 1.8; margin-bottom: .8rem; }
     .sec-div { width: 100px; height: 2px; background: var(--gold); margin-bottom: 3rem; }
 
     /* PERFIL */
@@ -63,51 +63,26 @@
     .perfil-header-right { flex-shrink: 0; }
     .btn-cv { display: inline-flex; align-items: center; gap: .65rem; padding: .9rem 2rem; background: var(--rose); color: var(--cream); border: none; border-radius: 50px; font-family: 'Outfit', sans-serif; font-size: .8rem; font-weight: 500; letter-spacing: .1em; text-transform: uppercase; text-decoration: none; transition: background .3s, transform .25s, box-shadow .3s; }
     .btn-cv:hover { background: #c96882; transform: translateY(-3px); box-shadow: 0 14px 30px rgba(226,125,151,.3); }
-
     .perfil-grid { display: flex; flex-direction: column; gap: 0; }
     .perfil-col-div { display: none; }
-
     .perfil-col-bio { margin-bottom: 3rem; }
     .perfil-col-bio p { font-size: .97rem; line-height: 1.95; opacity: .82; margin-bottom: 1.2rem; }
     .perfil-col-bio p:last-child { margin-bottom: 0; }
-
-    /* Video placeholder */
-    .video-placeholder {
-      width: 100%; aspect-ratio: 16/9;
-      background: var(--brown);
-      border-radius: 12px;
-      display: flex; flex-direction: column;
-      align-items: center; justify-content: center;
-      gap: 1rem; margin-bottom: 3rem;
-      border: 1.5px solid rgba(226,125,151,.15);
-      position: relative; overflow: hidden;
-    }
-    .video-placeholder::before {
-      content: ''; position: absolute; inset: 0;
-      background: radial-gradient(circle at 60% 40%, rgba(226,125,151,.08) 0%, transparent 65%);
-    }
-    .video-play {
-      width: 64px; height: 64px; border-radius: 50%;
-      border: 2px solid rgba(226,125,151,.4);
-      display: flex; align-items: center; justify-content: center;
-      position: relative; z-index: 1;
-    }
+    .video-placeholder { width: 100%; aspect-ratio: 16/9; background: var(--brown); border-radius: 12px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 1rem; margin-bottom: 3rem; border: 1.5px solid rgba(226,125,151,.15); position: relative; overflow: hidden; }
+    .video-placeholder::before { content: ''; position: absolute; inset: 0; background: radial-gradient(circle at 60% 40%, rgba(226,125,151,.08) 0%, transparent 65%); }
+    .video-play { width: 64px; height: 64px; border-radius: 50%; border: 2px solid rgba(226,125,151,.4); display: flex; align-items: center; justify-content: center; position: relative; z-index: 1; }
     .video-play svg { color: var(--rose); margin-left: 4px; }
     .video-label { font-size: .75rem; letter-spacing: .22em; text-transform: uppercase; color: rgba(255,255,255,.35); position: relative; z-index: 1; }
-
-    /* Números */
     .perfil-col-numbers { display: flex; flex-direction: row; gap: 0; margin-bottom: 3rem; border-top: 1px solid rgba(226,125,151,.2); border-bottom: 1px solid rgba(226,125,151,.2); padding: 2rem 0; }
     .p-num-item { flex: 1; text-align: center; border-right: 1px solid rgba(226,125,151,.2); padding: 0 1.5rem; }
     .p-num-item:last-child { border-right: none; }
     .p-num-value { font-family: 'Carattere', cursive; font-size: 3.2rem; color: var(--rose); line-height: 1; margin-bottom: .3rem; }
     .p-num-label { font-size: .72rem; letter-spacing: .18em; text-transform: uppercase; color: var(--brown); opacity: .7; line-height: 1.4; }
-
-    /* Skills */
     .p-skills-title { font-size: .68rem; font-weight: 600; letter-spacing: .22em; text-transform: uppercase; color: var(--rose); margin-bottom: 1.2rem; }
     .p-skill-tag { display: inline-block; font-size: .82rem; font-weight: 400; color: var(--brown); background: rgba(226,125,151,.1); border: 1px solid rgba(226,125,151,.2); border-radius: 50px; padding: .45rem 1rem; margin: 0 .4rem .6rem 0; transition: background .25s, border-color .25s, transform .2s; }
     .p-skill-tag:hover { background: rgba(226,125,151,.18); border-color: var(--rose); transform: translateY(-2px); }
 
-    /* EMPRESA / EXPERIENCIA cards */
+    /* EMPRESA / EXPERIENCIA */
     #empresa { background: var(--cream); }
     #experiencia { background: var(--sand); }
     .mag-wrap { will-change: transform; }
@@ -118,7 +93,8 @@
     .empresa-text { padding: 3.5rem; display: flex; flex-direction: column; justify-content: center; }
     .e-tag { display: inline-block; font-size: .67rem; letter-spacing: .2em; text-transform: uppercase; color: var(--rose); border: 1px solid rgba(226,125,151,.3); padding: .3rem .9rem; border-radius: 50px; margin-bottom: 1.4rem; }
     .empresa-text h2 { font-family: 'Carattere', cursive; font-size: 2.2rem; color: var(--brown); line-height: 1.15; margin-bottom: .5rem; }
-    .empresa-sub {font-size: .77rem; letter-spacing: .15em; text-transform: uppercase; color: var(--gold); margin-bottom: 1.6rem;}
+    /* ── CAMBIO: empresa-sub más pequeño ── */
+    .empresa-sub { font-size: .62rem; letter-spacing: .15em; text-transform: uppercase; color: var(--gold); margin-bottom: 1.6rem; }
     .empresa-text p { font-size: 1rem; line-height: 1.85; margin-bottom: 2rem; }
     .btn-arrow { display: inline-flex; align-items: center; gap: .7rem; font-size: .8rem; font-weight: 500; letter-spacing: .1em; text-transform: uppercase; color: var(--rose); text-decoration: none; transition: gap .3s; }
     .btn-arrow svg { transition: transform .3s; }
@@ -153,7 +129,6 @@
     @keyframes sir { to { opacity:1; transform:translateX(0); } }
     @keyframes bRight { 0%,100%{transform:translateX(0)} 50%{transform:translateX(7px)} }
 
-    /* RESPONSIVE */
     @media(max-width:900px) {
       #navbar { padding: 1rem 1.8rem; }
       .nav-links { gap: 1.6rem; }
@@ -195,7 +170,6 @@
     </ul>
   </nav>
 
-  <!-- HERO -->
   <section id="hero">
     <div class="hero-blob b1"></div>
     <div class="hero-blob b2"></div>
@@ -216,13 +190,11 @@
     </div>
     <div class="hero-photo">
       <div class="hero-frame">
-        <!-- Reemplazar con foto de Tania en uniforme: <img src="tania.jpg" alt="Tania Peláez Valverde" /> -->
         <div class="hero-frame-ph">✦</div>
       </div>
     </div>
   </section>
 
-  <!-- PERFIL -->
   <section id="perfil">
     <div class="wrap">
       <div class="perfil-header rv">
@@ -243,15 +215,11 @@
       </div>
 
       <div class="perfil-grid">
-        <!-- Bio -->
         <div class="perfil-col-bio rv" style="transition-delay:.1s;">
           <p>Soy estudiante de Comunicación Social y Periodismo, con interés en la comunicación estratégica, la creación de contenido institucional y la narración de procesos sociales desde una perspectiva humana y territorial. Me interesa especialmente el papel de la comunicación como herramienta para visibilizar iniciativas que generan desarrollo, fortalecen comunidades y promueven transformaciones sociales.</p>
           <p>Me caracterizo por ser una persona comprometida, creativa y sensible frente a las realidades sociales, con interés en desarrollar procesos comunicativos que integren narrativa, estrategia y propósito social.</p>
         </div>
-
         <div class="perfil-col-div"></div>
-
-        <!-- Video placeholder -->
         <div class="rv" style="transition-delay:.15s;">
           <div class="video-placeholder">
             <div class="video-play">
@@ -262,10 +230,7 @@
             <p class="video-label">Video de presentación</p>
           </div>
         </div>
-
         <div class="perfil-col-div"></div>
-
-        <!-- Números -->
         <div class="perfil-col-numbers rv" style="transition-delay:.2s;">
           <div class="p-num-item">
             <p class="p-num-value">10°</p>
@@ -280,10 +245,7 @@
             <p class="p-num-label">Tipos de trabajo<br>durante la práctica</p>
           </div>
         </div>
-
         <div class="perfil-col-div"></div>
-
-        <!-- Skills -->
         <div class="perfil-col-skills rv" style="transition-delay:.3s;">
           <p class="p-skills-title">Áreas de interés</p>
           <div>
@@ -298,13 +260,11 @@
     </div>
   </section>
 
-  <!-- EMPRESA -->
   <section id="empresa">
     <div class="wrap">
       <div class="mag-wrap rv" style="transition-delay:.16s;" id="magWrap">
         <div class="empresa-card">
           <div class="empresa-img">
-            <!-- <img src="logo-comite.png" alt="Comité de Cafeteros del Valle del Cauca" /> -->
             <div class="empresa-img-ph">✦</div>
           </div>
           <div class="empresa-text">
@@ -322,7 +282,6 @@
     </div>
   </section>
 
-  <!-- MI EXPERIENCIA -->
   <section id="experiencia">
     <div class="wrap">
       <div class="mag-wrap rv" style="transition-delay:.16s;" id="magWrapExp">
@@ -341,7 +300,6 @@
             </a>
           </div>
           <div class="empresa-img">
-            <!-- <img src="experiencia.jpg" alt="Mi experiencia en el Comité" /> -->
             <div class="empresa-img-ph">✦</div>
           </div>
         </div>
@@ -349,7 +307,6 @@
     </div>
   </section>
 
-  <!-- CONTACTO -->
   <section id="contacto">
     <div class="wrap">
       <h2 class="sec-title rv">Contacto</h2>
@@ -371,7 +328,6 @@
     </div>
   </section>
 
-  <!-- FOOTER -->
   <footer>
     <p class="f-name">Tania Peláez</p>
     <ul class="f-socials">
