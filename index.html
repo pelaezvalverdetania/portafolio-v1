@@ -142,6 +142,19 @@
       .experiencia-card .empresa-img { order: -1; }
       footer { flex-direction: column; gap: 1.5rem; text-align: center; padding: 2rem; }
     }
+    /* Navbar móvil: reducir tamaño para que quepan los links */
+    .nav-hamburger { display: none; }
+    @media(max-width:700px) {
+      #navbar { padding: .8rem 1.2rem; }
+      .nav-logo { font-size: 1.15rem; }
+      .nav-links { gap: .8rem; }
+      .nav-links a { font-size: .58rem; letter-spacing: .05em; }
+      #perfil { padding-top: 6rem; }
+    }
+    @media(max-width:430px) {
+      .nav-links { gap: .5rem; }
+      .nav-links a { font-size: .52rem; letter-spacing: .03em; }
+    }
     @media(max-width:768px) {
       .hero-main-name { white-space: normal; line-height: 1; }
       .p-num-item { padding: 0 .8rem; }
@@ -365,6 +378,17 @@
     }
     addTilt('magWrap');addTilt('magWrapExp');
     window.addEventListener('scroll',()=>{const y=window.scrollY,h=document.querySelector('.hero-photo');if(h&&y<window.innerHeight)h.style.transform=`translateY(${y*.1}px)`;});
+    /* Hamburguesa */
+    const burger = document.getElementById('hamburger');
+    if (burger) {
+      burger.addEventListener('click', () => {
+        nb.classList.toggle('menu-open');
+      });
+      // Cerrar al hacer clic en cualquier link
+      document.querySelectorAll('.nav-links a').forEach(a => {
+        a.addEventListener('click', () => nb.classList.remove('menu-open'));
+      });
+    }
   </script>
 </body>
 </html>
