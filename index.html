@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Tania Peláez Valverde — Comunicadora Social</title>
-  <link href="https://fonts.googleapis.com/css2?family=Carattere&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet" />
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     :root {
@@ -20,7 +20,7 @@
     /* NAVBAR */
     #navbar { position: fixed; top: 0; left: 0; right: 0; z-index: 100; padding: 1.2rem 5rem; display: flex; justify-content: space-between; align-items: center; background: rgba(248,245,239,.92); backdrop-filter: blur(14px); border-bottom: 1px solid rgba(226,125,151,.12); transform: translateY(-100%); transition: transform .55s cubic-bezier(.4,0,.2,1); }
     #navbar.vis { transform: translateY(0); }
-    .nav-logo { font-family: 'Carattere', cursive; font-size: 1.55rem; color: var(--rose); text-decoration: none; transition: opacity .2s; }
+    .nav-logo { font-family: 'Playfair Display', serif; font-size: 1.55rem; color: var(--rose); text-decoration: none; transition: opacity .2s; }
     .nav-logo:hover { opacity: .7; }
     .nav-links { display: flex; gap: 2.8rem; list-style: none; }
     .nav-links a { text-decoration: none; font-size: .78rem; font-weight: 800; letter-spacing: .12em; text-transform: uppercase; color: var(--brown); position: relative; transition: color .3s; }
@@ -35,7 +35,7 @@
     .hero-blob.b2 { width: 320px; height: 320px; background: radial-gradient(circle, rgba(216,179,106,.1) 0%, transparent 70%); bottom: 60px; left: -50px; }
     .hero-text { padding: 0 4rem 0 5rem; opacity: 0; transform: translateX(-44px); animation: sil 1s .35s forwards; }
     .hero-name { margin-bottom: 1.3rem; }
-    .hero-main-name { font-family: 'Carattere', cursive; font-size: clamp(3.4rem,6vw,6rem); color: var(--rose); line-height: 0.95; display: block; white-space: nowrap; }
+    .hero-main-name { font-family: 'Playfair Display', serif; font-weight: 300;font-size: clamp(3.4rem,6vw,6rem); color: var(--rose); line-height: 0.95; display: block; white-space: nowrap; }
     .hero-bar { width: 50px; height: 2px; background: var(--gold); margin-bottom: 1.3rem; }
     .hero-subtitle { font-size: .95rem; font-weight: 200; letter-spacing: .2em; text-transform: uppercase; color: var(--brown); margin-bottom: .5rem; }
     .hero-eyebrow { font-size: .7rem; font-weight: 800; letter-spacing: .258em; text-transform: uppercase; color: var(--brown); margin-bottom: 2.5rem; }
@@ -48,12 +48,12 @@
     .hero-frame::before { content: ''; position: absolute; inset: 0; border-radius: 210px 210px 0 0; background: var(--sand); }
     .hero-frame::after { content: ''; position: absolute; top: 22px; left: 22px; right: -14px; bottom: -14px; border: 1.5px solid rgba(216,179,106,.28); border-radius: 210px 210px 0 0; pointer-events: none; }
     .hero-frame img { width: 100%; height: 100%; object-fit: cover; object-position: top center; border-radius: 210px 210px 0 0; position: relative; z-index: 1; }
-    .hero-frame-ph { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; border-radius: 210px 210px 0 0; font-family: 'Carattere', cursive; font-size: 5rem; color: var(--rose); opacity: .2; z-index: 1; }
+    .hero-frame-ph { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; border-radius: 210px 210px 0 0; font-family: 'Playfair Display', serif; font-size: 5rem; color: var(--rose); opacity: .2; z-index: 1; }
 
     /* HELPERS */
     section { padding: 8rem 0; }
     .wrap { max-width: 1060px; margin: 0 auto; padding: 0 2.5rem; }
-    .sec-title { font-family: 'Carattere', cursive; font-size: clamp(2.5rem,4.2vw,3.2rem); font-weight: 600; color: var(--brown); line-height: 0.7; margin-bottom: .4rem; }
+    .sec-title { font-family: 'Playfair Display', serif; font-size: clamp(2.5rem,4.2vw,3.2rem); font-weight: 500; color: var(--brown); line-height: 0.7; margin-bottom: .4rem; }
     .sec-subtitle { font-family: 'Outfit', sans-serif; font-size: clamp(0.8rem,1.6vw,1.1rem); color: var(--rose); line-height: 1.8; margin-bottom: .8rem; }
     .sec-div { width: 100px; height: 2px; background: var(--gold); margin-bottom: 3rem; }
 
@@ -76,7 +76,7 @@
     .perfil-col-numbers { display: flex; flex-direction: row; gap: 0; margin-bottom: 3rem; border-top: 1px solid rgba(226,125,151,.2); border-bottom: 1px solid rgba(226,125,151,.2); padding: 2rem 0; }
     .p-num-item { flex: 1; text-align: center; border-right: 1px solid rgba(226,125,151,.2); padding: 0 1.5rem; }
     .p-num-item:last-child { border-right: none; }
-    .p-num-value { font-family: 'Carattere', cursive; font-size: 3.2rem; color: var(--rose); line-height: 1; margin-bottom: .3rem; }
+    .p-num-value { font-family: 'Playfair Display', serif; font-size: 3.2rem; color: var(--rose); line-height: 1; margin-bottom: .3rem; }
     .p-num-label { font-size: .72rem; letter-spacing: .18em; text-transform: uppercase; color: var(--brown); opacity: .7; line-height: 1.4; }
     .p-skills-title { font-size: .68rem; font-weight: 600; letter-spacing: .22em; text-transform: uppercase; color: var(--rose); margin-bottom: 1.2rem; }
     .p-skill-tag { display: inline-block; font-size: .82rem; font-weight: 400; color: var(--brown); background: rgba(226,125,151,.1); border: 1px solid rgba(226,125,151,.2); border-radius: 50px; padding: .45rem 1rem; margin: 0 .4rem .6rem 0; transition: background .25s, border-color .25s, transform .2s; }
@@ -89,12 +89,12 @@
     .empresa-card { background: var(--cream); border-radius: 16px; overflow: hidden; border: 1.8px solid rgba(226,125,151,.1); display: grid; grid-template-columns: 320px 1fr; min-height: 360px; transition: box-shadow .4s; }
     .empresa-card:hover { box-shadow: 0 24px 60px rgba(74,61,51,.1); }
     .empresa-img { background: var(--sand); display: flex; align-items: center; justify-content: center; position: relative; overflow: hidden; }
-    .empresa-img-ph { font-family: 'Carattere', cursive; font-size: 4.5rem; color: var(--rose); opacity: .22; }
+    .empresa-img-ph { font-family: 'Playfair Display', serif; font-size: 4.5rem; color: var(--rose); opacity: .22; }
     .empresa-text { padding: 3.5rem; display: flex; flex-direction: column; justify-content: center; }
     .e-tag { display: inline-block; font-size: .67rem; letter-spacing: .2em; text-transform: uppercase; color: var(--rose); border: 1px solid rgba(226,125,151,.3); padding: .3rem .9rem; border-radius: 50px; margin-bottom: 1.4rem; }
-    .empresa-text h2 { font-family: 'Carattere', cursive; font-size: 2.2rem; color: var(--brown); line-height: 1.15; margin-bottom: .5rem; }
+    .empresa-text h2 { font-family: 'Playfair Display', serif; font-weight: 500;font-size: 2.2rem; color: var(--brown); line-height: 1.15; margin-bottom: .5rem; }
     /* ── CAMBIO: empresa-sub más pequeño ── */
-    .empresa-sub { font-size: .62rem; letter-spacing: .15em; text-transform: uppercase; color: var(--gold); margin-bottom: 1.6rem; }
+    .empresa-sub { font-size: .67rem; letter-spacing: .15em; text-transform: uppercase; color: var(--gold); margin-bottom: 1.6rem; }
     .empresa-text p { font-size: 1rem; line-height: 1.85; margin-bottom: 2rem; }
     .btn-arrow { display: inline-flex; align-items: center; gap: .7rem; font-size: .8rem; font-weight: 500; letter-spacing: .1em; text-transform: uppercase; color: var(--rose); text-decoration: none; transition: gap .3s; }
     .btn-arrow svg { transition: transform .3s; }
@@ -116,7 +116,7 @@
 
     /* FOOTER */
     footer { background: var(--brown); padding: 2.8rem 5rem; display: flex; justify-content: space-between; align-items: center; }
-    .f-name { font-family: 'Carattere', cursive; font-size: 1.6rem; color: var(--rose); }
+    .f-name { font-family: 'Playfair Display', serif; font-size: 1.6rem; color: var(--rose); }
     .f-socials { display: flex; gap: 1.2rem; list-style: none; }
     .f-socials a { width: 42px; height: 42px; border-radius: 50%; border: 1px solid rgba(226,125,151,.25); display: flex; align-items: center; justify-content: center; color: rgba(255,255,255,.45); text-decoration: none; transition: border-color .3s, color .3s, transform .3s; }
     .f-socials a:hover { border-color: var(--rose); color: var(--rose); transform: translateY(-3px); }
@@ -191,8 +191,8 @@
         <span class="hero-main-name">Tania Peláez Valverde</span>
       </h1>
       <div class="hero-bar"></div>
-      <p class="hero-subtitle">Área de comunicaciones</p>
-      <p class="hero-eyebrow">Portafolio profesional · 2026</p>
+      <p class="hero-subtitle">Comunicación Social y Periodismo</p>
+      <p class="hero-eyebrow">Comunicación estratégica con propósito social. Conectar, visibilizar y transformar.</p>
       <a href="#perfil" class="hero-cta">
         <span class="hero-cta-line"></span>
         Descubrir
@@ -342,7 +342,7 @@
   </section>
 
   <footer>
-    <p class="f-name">Tania Peláez</p>
+    <p class="f-name">Tania Peláez Valverde</p>
     <ul class="f-socials">
       <li><a href="#" aria-label="Instagram">
         <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
