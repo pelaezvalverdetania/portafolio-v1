@@ -177,6 +177,51 @@
     .rv{opacity:0;transform:translateY(36px);transition:opacity .85s cubic-bezier(.4,0,.2,1),transform .85s cubic-bezier(.4,0,.2,1);}
     .rv.on{opacity:1;transform:translateY(0);}
 
+    /* LIGHTBOX */
+    .lightbox{
+      position:fixed;inset:0;z-index:1000;
+      background:rgba(58,46,40,.95);
+      display:flex;align-items:center;justify-content:center;
+      opacity:0;pointer-events:none;
+      transition:opacity .3s;
+      padding:2rem;
+    }
+    .lightbox.open{opacity:1;pointer-events:all;}
+    .lightbox-inner{
+      position:relative;
+      max-width:900px;width:100%;
+      max-height:90vh;
+    }
+    .lightbox-close{
+      position:absolute;top:-2.5rem;right:0;
+      background:none;border:none;cursor:pointer;
+      color:rgba(254,252,247,.6);font-size:.75rem;
+      letter-spacing:.18em;text-transform:uppercase;
+      display:flex;align-items:center;gap:.4rem;
+      transition:color .2s;
+    }
+    .lightbox-close:hover{color:var(--rose);}
+    .lightbox-media{
+      width:100%;max-height:80vh;
+      border-radius:4px;overflow:hidden;
+      display:flex;align-items:center;justify-content:center;
+    }
+    .lightbox-media img{
+      width:100%;height:100%;object-fit:contain;
+      max-height:80vh;border-radius:4px;
+    }
+    .lightbox-media video{
+      width:100%;max-height:80vh;
+      border-radius:4px;outline:none;
+    }
+    .lightbox-ph{
+      width:100%;aspect-ratio:16/9;
+      background:var(--sand);border-radius:4px;
+      display:flex;align-items:center;justify-content:center;
+      font-family:'Playfair Display',serif;
+      font-size:1rem;letter-spacing:.15em;color:var(--rose);opacity:.4;
+    }
+
     /* BACK */
     .back-section{padding:3rem 0;text-align:center;background:var(--sand);}
     .btn-back{display:inline-flex;align-items:center;gap:.6rem;padding:.9rem 2rem;border:1.5px solid var(--rose);border-radius:2px;font-size:.8rem;font-weight:500;letter-spacing:.1em;text-transform:uppercase;color:var(--rose);text-decoration:none;transition:background .3s,color .3s,transform .25s;}
@@ -582,6 +627,17 @@
     </a>
   </div>
 
+  <!-- LIGHTBOX -->
+  <div class="lightbox" id="lightbox" onclick="closeLightbox(event)">
+    <div class="lightbox-inner">
+      <button class="lightbox-close" onclick="closeLightboxBtn()">
+        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+        Cerrar
+      </button>
+      <div class="lightbox-media" id="lightboxMedia"></div>
+    </div>
+  </div>
+
   <script>
     /* Cursor */
     const dot=document.getElementById('cDot'),ring=document.getElementById('cRing');
@@ -601,17 +657,16 @@
     function toggleExpand(btn) {
       const expandable = btn.nextElementSibling;
       const isOpen = expandable.classList.contains('open');
-      // Cerrar todos
       document.querySelectorAll('.expandable.open').forEach(e=>e.classList.remove('open'));
-      document.querySelectorAll('.ver-mas-btn.open').forEach(b=>{b.classList.remove('open');b.childNodes[0].textContent='Ver más ';});
-      // Abrir el clickeado si estaba cerrado
+      document.querySelectorAll('.ver-mas-btn.open').forEach(b=>{
+        b.classList.remove('open');
+        b.querySelector('span') && (b.querySelector('span').textContent='Ver más');
+      });
       if (!isOpen) {
         expandable.classList.add('open');
         btn.classList.add('open');
-        btn.childNodes[0].textContent='Ver menos ';
-        // Revelar elementos dentro
         setTimeout(()=>{
-          expandable.querySelectorAll('.rv:not(.on)').forEach(el=>{el.classList.add('on');});
+          expandable.querySelectorAll('.rv:not(.on)').forEach(el=>el.classList.add('on'));
         }, 100);
       }
     }
@@ -622,6 +677,62 @@
       const slideW = car.querySelector('.carousel-slide').offsetWidth + 8;
       car.scrollBy({left: dir * slideW, behavior:'smooth'});
     }
+
+    /* ── LIGHTBOX ── */
+    function openLightbox(type, src) {
+      const lb = document.getElementById('lightbox');
+      const media = document.getElementById('lightboxMedia');
+      media.innerHTML = '';
+
+      if (type === 'image') {
+        if (src) {
+          const img = document.createElement('img');
+          img.src = src;
+          img.alt = '';
+          media.appendChild(img);
+        } else {
+          media.innerHTML = '<div class="lightbox-ph">Imagen de la publicación</div>';
+        }
+      } else if (type === 'video') {
+        if (src) {
+          const vid = document.createElement('video');
+          vid.src = src;
+          vid.controls = true;
+          vid.autoplay = true;
+          vid.muted = false;
+          media.appendChild(vid);
+        } else {
+          media.innerHTML = '<div class="lightbox-ph">Video de la publicación</div>';
+        }
+      }
+
+      lb.classList.add('open');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeLightbox(e) {
+      if (e.target === document.getElementById('lightbox')) closeLightboxBtn();
+    }
+
+    function closeLightboxBtn() {
+      const lb = document.getElementById('lightbox');
+      lb.classList.remove('open');
+      document.body.style.overflow = '';
+      // Pausar video si hay uno
+      const vid = lb.querySelector('video');
+      if (vid) vid.pause();
+      document.getElementById('lightboxMedia').innerHTML = '';
+    }
+
+    // Cerrar con Escape
+    document.addEventListener('keydown', e => { if(e.key==='Escape') closeLightboxBtn(); });
+
+    /* Hacer clickeables los slides */
+    document.querySelectorAll('.carousel-slide').forEach(slide => {
+      const type = slide.dataset.type || 'image';
+      const src  = slide.dataset.src  || '';
+      slide.addEventListener('click', () => openLightbox(type, src));
+    });
 
     /* Nav interno activo al hacer scroll */
     const sections = document.querySelectorAll('.port-section');

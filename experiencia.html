@@ -99,25 +99,25 @@
     .ap-title{font-family:'Playfair Display',serif;font-size:clamp(2rem,4vw,3rem);color:var(--brown);margin-bottom:.6rem;}
     .ap-intro{font-size:1rem;line-height:1.9;opacity:.82;margin-bottom:4rem;max-width:720px;}
 
-    /* Tabloides alternados */
+    /* Tabloides alternados — una columna completa con margen alternado */
     .ap-item{
-      display:grid;
-      gap:3rem;
-      align-items:center;
-      margin-bottom:4rem;
+      margin-bottom:3rem;
       opacity:0;
       transition:opacity .8s cubic-bezier(.4,0,.2,1), transform .8s cubic-bezier(.4,0,.2,1);
     }
-    .ap-item.from-right{ transform:translateX(80px); }
-    .ap-item.from-left{ transform:translateX(-80px); }
+    .ap-item.from-right{ transform:translateX(60px); }
+    .ap-item.from-left{ transform:translateX(-60px); }
     .ap-item.visible{ opacity:1; transform:translateX(0); }
 
-    /* Item derecha: texto a la derecha, decorado a la izquierda */
-    .ap-item.from-right .ap-deco{ order:1; }
-    .ap-item.from-right .ap-body{ order:2; }
-    /* Item izquierda: decorado a la derecha, texto a la izquierda */
-    .ap-item.from-left .ap-deco{ order:2; }
-    .ap-item.from-left .ap-body{ order:1; }
+    /* Alternado: derecha ocupa 70% desde la derecha, izquierda desde la izquierda */
+    .ap-item.from-right .ap-deco{
+      margin-left:auto;
+      width:85%;
+    }
+    .ap-item.from-left .ap-deco{
+      margin-right:auto;
+      width:85%;
+    }
 
     .ap-deco{
       background:var(--cream);
@@ -138,6 +138,15 @@
       font-size:.68rem;letter-spacing:.22em;
       text-transform:uppercase;color:var(--rose);
     }
+
+    .ap-body{}
+    .ap-body h3{
+      font-family:'Playfair Display',serif;
+      font-size:1.35rem;color:var(--brown);
+      margin-bottom:1rem;line-height:1.3;
+    }
+    .ap-body p{font-size:.97rem;line-height:1.95;opacity:.82;margin-bottom:.9rem;}
+    .ap-body p:last-child{margin-bottom:0;}
 
 
     /* CRECIMIENTO */
@@ -163,7 +172,13 @@
       nav{padding:1rem 1.8rem;}
       .intro-grid{grid-template-columns:1fr;}
       .skills-cols{grid-template-columns:1fr;}
-      .ap-item{grid-template-columns:1fr;gap:1.5rem;}
+      .ap-item{
+        grid-template-columns:1fr;gap:1.5rem;
+      }
+      .ap-item.from-right .ap-deco,
+      .ap-item.from-left .ap-deco{ order:1; }
+      .ap-item.from-right .ap-body,
+      .ap-item.from-left .ap-body{ order:2; }
       .collage-grid{grid-template-columns:repeat(2,1fr);grid-template-rows:auto;}
       .collage-item.tall{grid-row:span 1;}
       .collage-item.wide{grid-column:span 2;}
@@ -313,7 +328,6 @@
     </div>
   </section>
 
-
   <!-- APRENDIZAJES — tabloides alternados -->
   <section class="aprendizajes-section">
     <div class="wrap-narrow">
@@ -324,21 +338,21 @@
 
       <!-- 1 — desde la derecha -->
       <div class="ap-item from-right">
-        <div class="ap-deco ap-card-full">
+        <div class="ap-deco">
           <span class="ap-deco-num">01</span>
           <div class="ap-deco-line"></div>
-          <span class="ap-deco-tag"> Comprensión estratégica de la comunicación institucional </span>
-          <p> Uno de los principales aprendizajes ha sido comprender el papel de la comunicación institucional como un eje fundamental para fortalecer la relación entre las organizaciones y sus públicos. Esta experiencia me permitió entender cómo los procesos comunicativos contribuyen a generar cercanía, identidad y confianza entre la institucionalidad cafetera y las comunidades productoras del territorio.</p>
-          <p> Fortalecí mi capacidad para construir contenidos alineados con objetivos organizacionales, reconociendo la importancia de comunicar de manera clara, pertinente y estratégica en contextos institucionales. </p>
+          <h3 class="ap-deco-title">Comprensión estratégica de la comunicación institucional</h3>
+          <p>Uno de los principales aprendizajes ha sido comprender el papel de la comunicación institucional como un eje fundamental para fortalecer la relación entre las organizaciones y sus públicos. Esta experiencia me permitió entender cómo los procesos comunicativos contribuyen a generar cercanía, identidad y confianza entre la institucionalidad cafetera y las comunidades productoras del territorio.</p>
+          <p>Fortalecí mi capacidad para construir contenidos alineados con objetivos organizacionales, reconociendo la importancia de comunicar de manera clara, pertinente y estratégica en contextos institucionales.</p>
         </div>
       </div>
 
       <!-- 2 — desde la izquierda -->
       <div class="ap-item from-left">
-        <div class="ap-deco ap-card-full">
+        <div class="ap-deco">
           <span class="ap-deco-num">02</span>
           <div class="ap-deco-line"></div>
-          <span class="ap-deco-tag">Desarrollo de habilidades en creación de contenidos</span>
+          <h3 class="ap-deco-title">Desarrollo de habilidades en creación de contenidos</h3>
           <p>La participación constante en la producción de contenidos digitales, piezas informativas y cubrimientos institucionales fortaleció mis habilidades en: redacción y creación de contenidos, construcción de narrativas institucionales, producción audiovisual, fotografía y documentación de eventos, edición y adaptación de contenidos para plataformas digitales, storytelling organizacional y manejo de herramientas de IA.</p>
           <p>Este proceso me permitió desarrollar una visión más integral sobre la manera en que los contenidos pueden conectar emocionalmente con las audiencias y transmitir el valor social de las iniciativas institucionales.</p>
         </div>
@@ -346,25 +360,25 @@
 
       <!-- 3 — desde la derecha -->
       <div class="ap-item from-right">
-        <div class="ap-deco ap-card-full">
+        <div class="ap-deco">
           <span class="ap-deco-num">03</span>
           <div class="ap-deco-line"></div>
-          <span class="ap-deco-tag"> Fortalecimiento de capacidades organizacionales </span>
+          <h3 class="ap-deco-title">Fortalecimiento de capacidades organizacionales</h3>
           <p>El trabajo dentro del área de comunicaciones me permitió integrarme a dinámicas interdisciplinarias con diferentes equipos y áreas del Comité, fortaleciendo habilidades como: trabajo colaborativo, adaptabilidad, organización y gestión del tiempo, comunicación asertiva, resolución de situaciones en entornos dinámicos y capacidad de respuesta frente a múltiples tareas.</p>
         </div>
       </div>
 
       <!-- 4 — desde la izquierda -->
       <div class="ap-item from-left">
-        <div class="ap-deco ap-card-full">
+        <div class="ap-deco">
           <span class="ap-deco-num">04</span>
           <div class="ap-deco-line"></div>
-          <span class="ap-deco-tag">Desarrollo de habilidades en creación de contenidos</span>
+          <h3 class="ap-deco-title">Sensibilidad social y comprensión del territorio</h3>
           <p>La experiencia dentro del Comité fortaleció mi sensibilidad frente a las realidades sociales y humanas presentes en los territorios cafeteros. A través del contacto con proyectos, comunidades y procesos institucionales, comprendí la importancia de la comunicación como una herramienta para visibilizar historias, fortalecer identidades y generar conexiones entre las instituciones y las personas.</p>
           <p>Este aprendizaje reafirmó mi interés por desarrollar procesos comunicativos con enfoque humano y propósito social, capaces de contribuir al reconocimiento de las comunidades y al fortalecimiento del tejido social.</p>
         </div>
       </div>
-      
+
     </div>
   </section>
 
